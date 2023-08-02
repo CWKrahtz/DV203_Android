@@ -8,6 +8,7 @@ class MainActivity : AppCompatActivity() {
     //This onCreate, creates my screen/activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_KrahtzQuizMaster)
         //setContentView divines which xml layout to use as my frontend
         setContentView(R.layout.activity_main)
 
