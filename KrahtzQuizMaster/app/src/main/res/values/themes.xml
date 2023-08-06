@@ -6,9 +6,11 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="android:textColor">@color/primary_text</item>
     </style>
+
     <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_image</item>
         <item name="android:statusBarColor">@color/primary</item>
     </style>
+
     <style name="Theme.KrahtzQuizMaster" parent="Base.Theme.KrahtzQuizMaster" />
 </resources>
