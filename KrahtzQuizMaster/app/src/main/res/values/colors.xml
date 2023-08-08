@@ -5,4 +5,7 @@
     <color name="primary">#FF1A244D</color>
     <color name="primary_text">#FFFFCC57</color>
     <color name="primary_light">#FF273671</color>
+    <color name="cat1">#FF0AB6FF</color>
+    <color name="cat2">#FFA811D5</color>
+    <color name="cat3">#FF1CD265</color>
 </resources>

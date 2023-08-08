@@ -3,18 +3,38 @@ package com.example.krahtzquizmaster
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.krahtzquizmaster.models.Constants.allQuestions
-import com.example.krahtzquizmaster.models.Constants.getAllQuestions
+import com.example.krahtzquizmaster.databinding.ActivityCategorieBinding
+import com.example.krahtzquizmaster.databinding.ActivityMainBinding
+
+//import android.util.Log
+//Question Activity Section
+//import com.example.krahtzquizmaster.models.Constants.allQuestions
+//import com.example.krahtzquizmaster.models.Constants.getAllQuestions
 
 class CategoryActivity : AppCompatActivity() {
+    //TODO: viewBinding
+    lateinit var binding: ActivityCategorieBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categorie)
 
-        getAllQuestions() //Call to create questions
-        val listOfQuestions = allQuestions //Create an instance of our questions
+        binding = ActivityCategorieBinding.inflate(layoutInflater)
+        val view = binding.root
 
-        Log.d("AAA First Question", listOfQuestions[0].questionText)
+        setContentView(view)
+
+        //TODO: Get passed data from previous activity
+        val username = intent?.getStringExtra("username")
+        //intent?.extras?.getString("username")
+
+        binding.username.title = "$username"
+        Log.d("AAA Welcome", username.toString())
+
+//      This section will be for the question pages. (Week 2/3 - recordings)
+//      getAllQuestions() //Call to create questions
+//      val listOfQuestions = allQuestions //Create an instance of our questions
+
+//      Log.d("AAA First Question", listOfQuestions[0].questionText)
 
     }
 }

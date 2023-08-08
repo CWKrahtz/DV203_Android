@@ -30,6 +30,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    //connect our layout with our activity
     buildFeatures {
         viewBinding true
     }
