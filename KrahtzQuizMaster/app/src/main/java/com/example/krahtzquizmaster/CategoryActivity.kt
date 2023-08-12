@@ -30,11 +30,5 @@ class CategoryActivity : AppCompatActivity() {
         binding.username.title = "$username"
         Log.d("AAA Welcome", username.toString())
 
-//      This section will be for the question pages. (Week 2/3 - recordings)
-//      getAllQuestions() //Call to create questions
-//      val listOfQuestions = allQuestions //Create an instance of our questions
-
-//      Log.d("AAA First Question", listOfQuestions[0].questionText)
-
     }
 }
