@@ -41,6 +41,7 @@
             android:textSize="20sp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_geoCard"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="25dp"
@@ -69,6 +70,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_entCard"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="25dp"
@@ -96,6 +98,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="25dp"

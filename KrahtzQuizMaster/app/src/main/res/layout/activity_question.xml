@@ -7,6 +7,21 @@
     android:background="@color/primary"
     tools:context=".QuestionActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_light"
+
+        app:cardElevation="10dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_launcher_foreground"
+        app:title="username"
+        app:titleTextColor="@color/primary_text" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

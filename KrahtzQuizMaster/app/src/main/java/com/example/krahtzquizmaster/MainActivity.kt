@@ -19,10 +19,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
 
-
-//      setTheme(R.style.Theme_KrahtzQuizMaster)
-//      setContentView divines which xml layout to use as my frontend
-//      setContentView(R.layout.activity_main)
         setContentView(view)
 
 //      update text with the use of the binding
