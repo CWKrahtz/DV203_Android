@@ -31,7 +31,7 @@ class CategoryActivity : AppCompatActivity() {
         //intent?.extras?.getString("username")
 
         binding.username.title = "$username"
-        Log.d("AAA Welcome", username.toString())
+//        Log.d("AAA Welcome", username.toString())//Debug
 
         //TODO: Check when user clicks on Geo Category
         binding.cvGeoCard.setOnClickListener {

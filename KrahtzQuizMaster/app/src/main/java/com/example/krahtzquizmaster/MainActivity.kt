@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.krahtzquizmaster.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -30,25 +31,24 @@ class MainActivity : AppCompatActivity() {
         binding.btnStart.setOnClickListener{
             //TODO: Validate if te username is valid
             //Getting the entered text (username)
-            var username = binding.etUsername.text
+            val username = binding.etUsername.text
 
             if(username.isNullOrBlank()){ //Check if username is filled in or not
-
                 Log.d("AAA invalid Username", "Please fill in username")
-                //TODO: Display Validation Message
+                //TODO: Display Validation Message to user with a toast
+                //context being this activity, the test message, the duration
+                Toast.makeText(this, "Please Enter A Player Name", Toast.LENGTH_LONG).show()
+                //Extra validation styling
+                binding.tilInputLayout.error="Please Enter A Player Name"
+
             }else{
-                //TODO: Navigate to QuestionActivity
-                Log.d("AAA Captured Username: ", username.toString())//Debug
+                //Navigate to QuestionActivity
                 //Define intent navigation
                 val intent = Intent(this, CategoryActivity::class.java)
-
                 //Pass extra information through to other activity
                 intent.putExtra("username", username.toString())
-
                 //Start intent
                 startActivity(intent)
-                //Remove activity from the backstack
-                //finish()
             }
 
         }//end of button listener
