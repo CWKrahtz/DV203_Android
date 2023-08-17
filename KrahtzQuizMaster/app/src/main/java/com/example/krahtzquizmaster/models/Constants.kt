@@ -8,6 +8,8 @@ object Constants {
     var allQuestions = ArrayList<Question>()
     var geoQuestions = ArrayList<Question>()
 
+
+
     //functions to populate our questions
     fun getAllQuestions(){
         //Defined Questions

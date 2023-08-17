@@ -1,11 +1,14 @@
 package com.example.krahtzquizmaster
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.krahtzquizmaster.databinding.ActivityCategorieBinding
 import com.example.krahtzquizmaster.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 //import android.util.Log
 //Question Activity Section
@@ -45,6 +48,21 @@ class CategoryActivity : AppCompatActivity() {
             //start navigation
             startActivity(intent)
         }//end of button listener
+        //view last user score
+        binding.fabLastscore.setOnClickListener{
+            val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
+            //get The value stored
+            val lastUser = sharedPref.getString("last_user", "No user found")
+            val lastScore = sharedPref.getInt("last_score", 0)
 
+            Log.d("AAA  Lsat user from Storage", lastUser + lastScore.toString())
+
+            //displaying the score with a snackBar
+            val snack = Snackbar.make(it, lastUser!!, Snackbar.LENGTH_LONG)
+            snack.setAction(lastScore.toString(), View.OnClickListener {
+                //nothing
+            })
+            snack.show()
+        }
     }// end of onCreate function
 }

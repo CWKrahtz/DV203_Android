@@ -24,11 +24,13 @@ class QuestionActivity : AppCompatActivity() {
         //setContentView divines which xml layout to use as my frontend
         setContentView(view)
 
-        val username = intent?.getStringExtra("username")
+        val username = intent.extras?.getString("username")
         Log.d("AAA Welcome: ", username.toString())
+
         //Set default value to one
         val questionNumber = intent.extras?.getInt("questionNumber", 1)
-        var userScore = 0
+        var userScore = intent.extras?.getInt("userScore", 0)
+        Log.d("AAA User Score: : ", userScore.toString())
 
         //If first question, get all the questions if not then don't get
         if (questionNumber == 1){
@@ -66,23 +68,38 @@ class QuestionActivity : AppCompatActivity() {
 //                Log.d("AAA Answer Selected: ", selectedAnswerValue.text.toString())
 
                 if (selectedAnswerValue.text == currentQuestion.correctAnswer){
-                    //Update user score
-                    userScore += 1
+                    //TODO: Update user score
+                    userScore = userScore!! + 1
                 }
 
                 //Navigate to the next question
-                val intent = Intent(this, QuestionActivity::class.java)
-                intent.putExtra("questionNumber", questionNumber+1)
-
-                //TODO: Pass user's score
-                startActivity(intent)
-                finish()
-
                 //TODO:Check if it is thelast question, then navigate to result screen
+                //currently have 5 questions, and last question is 5
+                if(questionNumber == listOfGeoQuestions.count()){
+                    //TODO: Navigate to result page
+                    Log.d("AAA Result", userScore.toString())
 
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.putExtra("userScore", userScore)
+                    intent.putExtra("username", username)
+                    intent.putExtra("totalQuestions", listOfGeoQuestions.count())
+
+                    startActivity(intent)
+                    finish()
+                }else {
+                    val intent = Intent(this, QuestionActivity::class.java)
+                    intent.putExtra("questionNumber", questionNumber+1)
+                    intent.putExtra("userScore", userScore)
+                    intent.putExtra("username", username)
+                    //TODO: Pass user's score
+                    startActivity(intent)
+                    finish()
+                }
             }else{
                 Toast.makeText(this, "Please Select An Option",Toast.LENGTH_LONG).show()
             }
+
+
         }
 
     }
