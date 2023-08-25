@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.krahtzquizmaster.databinding.ActivityResultBinding
 
-class ResultActivity : AppCompatActivity() {
+class SanResultActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityResultBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +44,8 @@ class ResultActivity : AppCompatActivity() {
 
         editor.apply(){
             //adding all values we want to store.
-            putString("last_user", username)
-            putInt("last_scoregeo", userScore!!)
+            putString("last_usersan", username)
+            putInt("last_scoresan", userScore!!)
             apply()//applying the edit
         }
 
@@ -55,7 +55,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         binding.btnTryAgain.setOnClickListener{
-            val intent = Intent(this, QuestionActivity::class.java)
+            val intent = Intent(this, ScienceQuestionActivity::class.java)
             //Pass extra information through to other activity
             intent.putExtra("username", username.toString())
             //start navigation
