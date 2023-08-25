@@ -44,7 +44,7 @@ class ResultActivity : AppCompatActivity() {
 
         editor.apply(){
             //adding all values we want to store.
-            putString("last_user", username)
+            putString("last_usergeo", username)
             putInt("last_scoregeo", userScore!!)
             apply()//applying the edit
         }

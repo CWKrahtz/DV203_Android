@@ -64,7 +64,7 @@ class CategoryActivity : AppCompatActivity() {
         binding.fabLastscoregeo.setOnClickListener{
             val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
             //get The value stored
-            val lastUser = sharedPref.getString("last_user", "No user found")
+            val lastUser = sharedPref.getString("last_usergeo", "No user found")
             val lastScore = sharedPref.getInt("last_scoregeo", 0)
 
             Log.d("AAA  Lsat user from Storage", lastUser + lastScore.toString())
@@ -109,6 +109,14 @@ class CategoryActivity : AppCompatActivity() {
                 //nothing
             })
             snack.show()
+        }
+
+        binding.btnSetting.setOnClickListener{
+            val intent = Intent(this, SettingsActivity::class.java)
+            //Pass extra information through to other activity
+            intent.putExtra("username", username.toString())
+            //start navigation
+            startActivity(intent)
         }
     }// end of onCreate function
 }
