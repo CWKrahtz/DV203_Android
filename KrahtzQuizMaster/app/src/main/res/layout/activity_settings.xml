@@ -86,12 +86,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_margin="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="About"
-                    android:textAlignment="center"
-                    android:textSize="35sp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,6 +107,18 @@
                     android:text="This project is one of my first android apps I created, It was a lot of fun but I still require more practice to have a proper app."
                     android:layout_margin="5dp"
                     android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tv_GitHub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:linksClickable="true"
+                    android:text="@string/hyperlink"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_text" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

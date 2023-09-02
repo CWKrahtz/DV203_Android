@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.krahtzquizmaster.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
@@ -40,13 +41,17 @@ class ResultActivity : AppCompatActivity() {
         //creating an instance of our sharedPref
         val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
         //edit this preference
-        val editor = sharedPref.edit()
+        val lastScore = sharedPref.getInt("last_scoregeo", 0)
+        Log.d("AAA Last High Score: ", lastScore.toString())
+        if (lastScore < userScore!!){
+            val editor = sharedPref.edit()
 
-        editor.apply(){
+            editor.apply(){
             //adding all values we want to store.
             putString("last_usergeo", username)
             putInt("last_scoregeo", userScore!!)
             apply()//applying the edit
+            }
         }
 
         //Btn Nav:

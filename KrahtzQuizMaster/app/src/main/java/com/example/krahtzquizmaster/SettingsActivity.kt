@@ -2,8 +2,11 @@ package com.example.krahtzquizmaster
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
+import android.widget.TextView
 import com.example.krahtzquizmaster.databinding.ActivityCategorieBinding
 import com.example.krahtzquizmaster.databinding.ActivitySettingsBinding
 
@@ -16,6 +19,8 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        setupHyperlink()
 
         binding.btnBack.setOnClickListener{
             val username = intent.extras?.getString("username")
@@ -58,5 +63,10 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }//end of button listener
+    }
+    fun setupHyperlink() {
+        val linkTextView = findViewById<TextView>(R.id.tv_GitHub)
+        linkTextView.movementMethod = LinkMovementMethod.getInstance();
+        linkTextView.setLinkTextColor(Color.WHITE)
     }
 }

@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.example.krahtzquizmaster.databinding.ActivityCategorieBinding
-import com.example.krahtzquizmaster.databinding.ActivityMainBinding
+//import com.example.krahtzquizmaster.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
 //import android.util.Log
